@@ -231,13 +231,13 @@ static void analyzeImage(const std::vector<uint8_t>& mipData, uint32_t width, ui
     printf("block;psnr min; psnr max;px;py;spx;spy;\n");
 
     // Analyze blocks similarity between blocks
-    for (size_t i = 0; i < decompressedBlocks.size(); i++)
+    for (uint32_t i = 0; i < (uint32_t)decompressedBlocks.size(); i++)
     {
         double maxBlockPsnr = -DBL_MAX;
         double minBlockPsnr = DBL_MAX;
         uint32_t similarBlockIndex = i;
 
-        for (size_t j = 0; j < decompressedBlocks.size(); j++)
+        for (uint32_t j = 0; j < (uint32_t)decompressedBlocks.size(); j++)
         {
             if (i == j)
             {
@@ -277,7 +277,7 @@ static void analyzeImage(const std::vector<uint8_t>& mipData, uint32_t width, ui
 
     // print histogram
     printf("dB;count\n");
-    for (size_t i = 0; i < histogram.size(); i++)
+    for (uint32_t i = 0; i < (uint32_t)histogram.size(); i++)
     {
         printf("%d;%d\n", i, histogram[i]);
     }

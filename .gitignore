@@ -37,3 +37,5 @@ Bin/
 *.opendb
 *.user
 build/vs2015/.vs/DxtSplitter/v14/.suo
+*.ipch
+.vs/
